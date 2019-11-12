@@ -3,9 +3,7 @@ A python script to query local NTP status (via ntpq -p) and return the fields as
 
 NTP can need quite a bit of setup and monitoring to ensure that your time is synchronised to within the desired level, especially for computer vision applications that may need image timestamps accurate to within a few milliseconds (if you need this to be within a few hundred or tens microseconds then you may need something like PPS instead!).  The first port of call to get NTP status is to manually run:
 
-<pre>
-ntpq -p
-</pre>
+`ntpq -p`
 
 Which returns various status values, like this:
 
@@ -23,8 +21,22 @@ More info can be found [here](https://www.ridgesolutions.ie/index.php/2015/04/29
 Usage:
 ------
 
-<pre>
-./query_ntp_status.py
+`./query_ntp_status.py`
 
-{"query_result": "ok", "data": {"remote": "bray.walcz.net", "refid": "140.203.204.77", "st": "2", "t": "u", "when": "14", "poll": "64", "reach": "377", "delay": "10.601", "offset": "-3.535", "jitter": "0.447"}}
-</pre>
+```javascript
+{
+  "query_result": "ok",
+  "data": {
+    "remote": "bray.walcz.net",
+    "refid": "140.203.204.77",
+    "st": "2",
+    "t": "u",
+    "when": "14",
+    "poll": "64",
+    "reach": "377",
+    "delay": "10.601",
+    "offset": "-3.535",
+    "jitter": "0.447"
+  }
+}
+```
